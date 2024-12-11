@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+
+  <link rel="stylesheet" href="style.css">
+  <title></title>
+</head>
+
+<body>
+  <div id="header">Sliding Puzzle Game</div>
+  <div class="center">Click the picture you wish to play with. <br> Click new game to start</div>
+  <div id="game-select">
+    <div id="camel" class="bold"><img src="images/camel/camel_raw.png" onclick="chooseGameMode(camel)"><br>Camel</div>
+    <div id="elephant"><img src="images/elephant/elephant_raw.png" onclick="chooseGameMode(elephant)"><br>Elephant</div>
+    <div id="duck"><img src="images/duck/duck_raw.png" onclick="chooseGameMode(duck)"><br>Duck</div>
+    <div id="cow"><img src="images/cow/cow_raw.png" onclick="chooseGameMode(cow)"><br>Cow</div>
+  </div>
+  <div id="game-container"></div>
+  <div id="win-display" class="display"></div>
+  <div id="moves-display" class="display">Moves: </div>
+  <div id="match-display" class="display">Matches: </div>
+  <div id="controls">
+    <button onclick="newGame()">New Game</button>
+    <button onclick="solvePuzzle()">Solve Puzzle</button>
+  </div>
+  <script src="game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#game-container {
+  display: flex;
+  margin: 20px auto;
+  width: 450px;
+  height: 450px;
+  background-color: #ccc;
+  justify-content: center;
+  align-items: center;
+}
+
+#header {
+  margin: 30px auto 0 auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+table {
+  margin: 0;
+  padding: 0;
+  border-spacing: 0;
+  /* Removes any space between table cells */
+  border-collapse: collapse;
+  /* Ensures borders of adjacent cells collapse together */
+}
+
+td {
+  width: 100px;
+  height: 100px;
+}
+
+.grid {
+  margin: 0;
+  padding: 0;
+  border: none;
+  /* Removes any borders from grid cells */
+  width: 100%;
+  /* Ensures tiles take up the full width of the cell */
+  height: 100%;
+  /* Ensures tiles take up the full height of the cell */
+  text-align: center;
+  /* Centers the content */
+  vertical-align: middle;
+  /* Vertically aligns the content */
+  position: relative;
+  /* Ensures absolute positioning works for the tile label */
+}
+
+/* Optional: Remove extra padding and margins from the img element as well */
+.grid img {
+  margin: 0;
+  padding: 0;
+  display: block;
+  /* Removes any space below the image (due to inline-block behavior) */
+  width: 100px;
+  /* Makes the image fill the entire grid cell */
+  height: 100px;
+  /* Makes the image fill the entire grid cell */
+}
+
+.tile-label {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Semi-transparent background */
+  color: white;
+  /* Text color */
+  font-size: 12px;
+  /* Small font size */
+  padding: 2px 5px;
+  /* Padding for the label */
+  border-radius: 5px;
+  /* Rounded corners */
+  pointer-events: none;
+  /* Prevent the label from interfering with clicks */
+  z-index: 1;
+}
+
+.display {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+#win-display {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  color: green;
+}
+
+#controls {
+  display: flex;
+  margin: 30px auto 0 auto;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  border-radius: 10%;
+  background-color: green;
+  font-weight: bold;
+  padding: 20px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+#game-select {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center;
+  width: 30%;
+  position: absolute;
+  left: 0;
+  margin-left: 50px;
+  padding: 0;
+}
+
+#game-select img {
+  width: 200px;
+  height: 200px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
