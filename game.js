@@ -127,19 +127,32 @@ function isSolvable(puzzle) {
 function move(e) {
   let target = e.target.closest(".grid");
   let gridPosition = parseInt(target.id);
-  let adjacentIds = [gridPosition - 1, gridPosition + 1, gridPosition - 4, gridPosition + 4]; // Identify the four grid positions we could potentially move to
-  // Check the possibilities for a clear space
+  let row = Math.floor((gridPosition - 1) / 4); // Determine the row of the clicked tile
+
+  // Calculate adjacent tile IDs
+  let adjacentIds = [
+    gridPosition - 1, // Left
+    gridPosition + 1, // Right
+    gridPosition - 4, // Above
+    gridPosition + 4, // Below
+  ];
+
   for (let i = 0; i < adjacentIds.length; i++) {
     let adjacentTile = document.getElementById(adjacentIds[i]);
-    // If there is a clear space
-    if (adjacentTile && adjacentTile.innerHTML === "") {
-      // Swap image content
-      adjacentTile.innerHTML = target.innerHTML;
-      target.innerHTML = "";
-      moveCount();
-      checkMatch();
-      return;
-    }
+
+    // Skip invalid moves
+    if (!adjacentTile || adjacentTile.innerHTML !== "") continue;
+
+    // Ensure left/right moves are within the same row
+    if (i === 0 && Math.floor((gridPosition - 2) / 4) !== row) continue; // Left
+    if (i === 1 && Math.floor(gridPosition / 4) !== row) continue; // Right
+
+    // Perform the move if valid
+    adjacentTile.innerHTML = target.innerHTML;
+    target.innerHTML = "";
+    moveCount();
+    checkMatch();
+    return;
   }
 }
 
