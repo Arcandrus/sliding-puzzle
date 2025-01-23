@@ -208,13 +208,13 @@ function gameWin(match) {
   if (match === layout) {
     document.getElementById("win-display").innerText = `You Win!`;
     let final = document.getElementById("16");
-    final.innerHTML = `<img src="images/${gameMode}/16.png" alt="16" class="tile">`;
     // Iterate through each tile and remove the "match" class, and remove labels
     let finalGrid = document.getElementsByClassName("grid"); // Get all grid tiles
     for (let i = 0; i < finalGrid.length; i++) {
       finalGrid[i].classList.remove("match"); // Remove the match class
     }
     let finalLabel = document.getElementsByClassName("tile-label");
+    final.innerHTML = `<img src="images/${gameMode}/16.png" alt="16" class="tile">`;
     for (let i = 0; i < finalLabel.length; i++) {
       finalLabel[i].innerHTML = "";
       finalLabel[i].style.backgroundColor = "rgba(0, 0, 0, 0.0)";
